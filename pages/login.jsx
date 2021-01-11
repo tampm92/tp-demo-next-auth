@@ -14,7 +14,7 @@ const LoginPage = ({ providers, baseUrl }) => {
   const query = router.query
 
   const tpSignIn = (provider, params = {}) => {
-    params.callbackUrl = `${baseUrl}${query.callbackUrl}` ?? `${baseUrl}`
+    params.callbackUrl = query.callbackUrl ?? '/'
     signIn(provider, params)
   }
 
@@ -22,7 +22,7 @@ const LoginPage = ({ providers, baseUrl }) => {
     <main className="bg-gray-100 h-screen font-mono">
       <div className="container mx-auto h-full flex justify-center items-center">
         <div className="lg:w-1/3 md:w-1/2">
-          <h1 className="text-4xl mb-6 text-center text-green-500 font-bold">Login Next-Auth {baseUrl}</h1>
+          <h1 className="text-4xl mb-6 text-center text-green-500 font-bold">Login Next-Auth</h1>
           <div className="border-green-500 p-8 border-t-4 bg-white mb-6 rounded-lg shadow-lg">
             <div className="mb-4">
               <label className="font-bold text-gray-600 block mb-2">Username</label>

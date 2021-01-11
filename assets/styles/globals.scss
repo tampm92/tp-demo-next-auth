@@ -8,3 +8,7 @@ iframe {
     border-radius: .5rem;
     filter: invert(1);
 }
+
+textarea:focus, input:focus{
+    outline: none;
+}
