@@ -34,7 +34,7 @@ const LoginPage = ({ providers, baseUrl }) => {
             <div className="mb-6">
               <label className="font-bold text-gray-600 block mb-2">Password</label>
               <input value={password} onChange={handleChangePassword}
-                type="password" className="block appearance-none w-full bg-white border border-gray-300 hover:border-grey px-2 py-2 rounded shadow"
+                type="password" className="block appearance-none w-full bg-white border border-gray-300 hover:border-grey px-2 py-2 rounded shadow focus:border-green-600"
                 placeholder="Your Password" />
             </div>
 

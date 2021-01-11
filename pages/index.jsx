@@ -27,7 +27,7 @@ yarn create next-app
                   >👉 Github</a>
                 </li>
                 <li>
-                  <a href="https://blog.logrocket.com/using-authentication-in-next-js/" target="_blank"
+                  <a href="https://console.developers.google.com/apis/credentials" target="_blank"
                     className="text-gray-800 font-bold"
                   >👉 Google</a>
                 </li>
