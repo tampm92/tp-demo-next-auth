@@ -5,7 +5,7 @@ import { providers, signIn } from 'next-auth/client'
 import CleanLayout from '@/layouts/clean'
 import SvgIcon from '@/components/common/SvgIcon'
 
-const LoginPage = ({ providers }) => {
+const LoginPage = ({ providers, baseUrl }) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const handleChangeUsername = (e) => setUsername(e.target.value)
@@ -14,7 +14,7 @@ const LoginPage = ({ providers }) => {
   const query = router.query
 
   const tpSignIn = (provider, params = {}) => {
-    params.callbackUrl = query.callbackUrl ?? '/'
+    params.callbackUrl = `${baseUrl}${query.callbackUrl}` ?? `${baseUrl}`
     signIn(provider, params)
   }
 
@@ -27,7 +27,7 @@ const LoginPage = ({ providers }) => {
             <div className="mb-4">
               <label className="font-bold text-gray-600 block mb-2">Username</label>
               <input value={username} onChange={handleChangeUsername}
-                type="text" className="block appearance-none w-full bg-white border border-gray-300 hover:border-grey px-2 py-2 rounded shadow"
+                type="text" className="block appearance-none w-full bg-white border border-gray-300 hover:border-grey px-2 py-2 rounded shadow focus:border-green-600"
                 placeholder="Your Username" />
             </div>
 
@@ -75,7 +75,8 @@ const LoginPage = ({ providers }) => {
 
 LoginPage.getInitialProps = async (context) => {
   return {
-    providers: await providers(context)
+    providers: await providers(context),
+    baseUrl: process.env.NEXTAUTH_URL
   }
 }
 
