@@ -25,14 +25,14 @@ const LoginPage = ({ providers, baseUrl }) => {
           <h1 className="text-4xl mb-6 text-center text-green-500 font-bold">Login Next-Auth</h1>
           <div className="border-green-500 p-8 border-t-4 bg-white mb-6 rounded-lg shadow-lg">
             <div className="mb-4">
-              <label className="font-bold text-gray-600 block mb-2">Username</label>
+              <label className="font-bold text-gray-600 block mb-2">Username (test)</label>
               <input value={username} onChange={handleChangeUsername}
                 type="text" className="block appearance-none w-full bg-white border border-gray-300 hover:border-grey px-2 py-2 rounded shadow focus:border-green-600"
                 placeholder="Your Username" />
             </div>
 
             <div className="mb-6">
-              <label className="font-bold text-gray-600 block mb-2">Password</label>
+              <label className="font-bold text-gray-600 block mb-2">Password (123456)</label>
               <input value={password} onChange={handleChangePassword}
                 type="password" className="block appearance-none w-full bg-white border border-gray-300 hover:border-grey px-2 py-2 rounded shadow focus:border-green-600"
                 placeholder="Your Password" />
